@@ -11,6 +11,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <style>
     /* Basic Reset */
     * {
@@ -150,14 +153,11 @@
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
       animation: pulse 2s infinite;
-      text-align: center;
     }
 
     .cta-button:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      
     }
 
     /* Pulse Animation for CTA Button */
@@ -194,6 +194,18 @@
       color: #0056b3;
     }
 
+    /* Instagram Icon */
+    .instagram-icon {
+      margin-left: 10px;
+      font-size: 1.2rem;
+      color: #e4405f; /* Instagram brand color */
+      transition: color 0.3s;
+    }
+
+    .instagram-icon:hover {
+      color: #c13584; /* Darker shade for hover */
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       header h1 {
@@ -212,8 +224,8 @@
       .cta-button {
         padding: 12px 30px;
         font-size: 1rem;
-        text-align: center;
-        
+        width: 100%; /* Full width on mobile */
+        text-align: center; /* Center text */
       }
     }
 
@@ -235,10 +247,9 @@
       }
 
       .cta-button {
-        width: 90%;
+        width: 90%; /* Slightly smaller width for better spacing */
         padding: 15px;
         font-size: 1.1rem;
-        text-align: center;
       }
     }
 
@@ -281,7 +292,11 @@
   <a href="https://forms.gle/qtTdeqVH96qkX1Yy6" class="cta-button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Join Us Now</a>
 
   <footer>
-    <p>For more details, visit <a href="https://forms.gle/qtTdeqVH96qkX1Yy6" target="_blank">www.collegefest.com</a></p>
+    <p>For more details, visit <a href="https://forms.gle/qtTdeqVH96qkX1Yy6" target="_blank">www.collegefest.com</a> 
+      <a href="https://www.instagram.com/tharangam.2k25_scient?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </p>
   </footer>
 
   <!-- AOS Library JS -->
