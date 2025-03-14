@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Leap 2K25</title>
+
+  <!-- AOS Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+      padding-bottom: 80px; /* Space for footer */
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      border-radius: 15px;
+      margin: 40px 0;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      animation: bounce 2s infinite;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+
+    /* Event Sections */
+    .events {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .event {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      width: 45%;
+      margin: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Floating Animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .event:hover {
+      animation: none; /* Stop animation on hover */
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Tech Events Box - Blue Outline */
+    .event.tech {
+      border: 3px solid #007bff; /* Blue outline */
+    }
+
+    /* Non-Tech Events Box - Black Outline */
+    .event.non-tech {
+      border: 3px solid #333; /* Black outline */
+    }
+
+    .event h3 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .event:hover h3 {
+      color: #007bff;
+    }
+
+    .event ul {
+      list-style-type: none;
+      margin-top: 15px;
+    }
+
+    .event ul li {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      font-weight: 400;
+      color: #555;
+      transition: color 0.3s;
+    }
+
+    .event ul li:hover {
+      color: #007bff;
+    }
+
+    /* Call to Action Button */
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      margin: 30px 0;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Pulse Animation for CTA Button */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      padding: 20px;
+      background-color: #fff;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      .events {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .event {
+        width: 80%;
+      }
+
+      .cta-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .event h3 {
+        font-size: 1.8rem;
+      }
+
+      .event ul li {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        width: 90%;
+        padding: 15px;
+        font-size: 1.1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header data-aos="fade-down" data-aos-duration="1000">
+    <h1>Quantum Leap 2K25</h1>
+    <p>A National level Tech Fest</p>
+  </header>
+
+  <div class="events">
+    <!-- Tech Events -->
+    <div class="event tech" data-aos="fade-up" data-aos-duration="1000">
+      <h3>Tech Events</h3>
+      <ul>
+        <li>Paper Presentation</li>
+        <li>Technical Quiz</li>
+        <li>Innovatex</li>
+        <li>Project Expo</li>
+        <li>Poster Presentation</li>
+        <li>Code Clash</li>
+        <li>Circuit Design</li>
+      </ul>
+    </div>
+
+    <!-- Non-Tech Events -->
+    <div class="event non-tech" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+      <h3>Non-Tech Events</h3>
+      <ul>
+        <li>Dance</li>
+        <li>Drama</li>
+        <li>Music Jam</li>
+        <li>Art & Craft</li>
+      </ul>
+    </div>
+  </div>
+
+  <a href="https://forms.gle/qtTdeqVH96qkX1Yy6" class="cta-button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Join Us Now</a>
+
+  <footer>
+    <p>For more details, visit <a href="https://forms.gle/qtTdeqVH96qkX1Yy6" target="_blank">www.collegefest.com</a></p>
+  </footer>
+
+  <!-- AOS Library JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init();
+  </script>
+
+</body>
+</html>
